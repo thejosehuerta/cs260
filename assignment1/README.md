@@ -5,6 +5,7 @@ Assignment 1
 In this program, our goal is to model a bag of marbles with the ability to add a marble, remove a marble and verify that the program is working.
 
 1.  Properties and behaviours:
+
     a.  There will be threee different colors of marbles to choose from: black, white, and yellow. They will be represented as ints.
         There will be no capacity to this bag.
         
