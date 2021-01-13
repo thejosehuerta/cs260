@@ -1,4 +1,8 @@
-    Jose Huerta
+Jose Huerta 
+
+CS 260 -
+Assignment 2
+
 ---
 #### 1.  Based on what we know about linked lists, stacks, and queues, design a queue data structure:
     a.  What functions are we likely to need for a queue?
