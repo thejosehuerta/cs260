@@ -8,7 +8,6 @@ Assignment 2
     a.  What functions are we likely to need for a queue?
     testing
     
----
     b.  What values will we need to know about the structure for our queue to function properly?
 
 
