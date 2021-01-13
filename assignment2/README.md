@@ -11,5 +11,7 @@ Assignment 2
     b.  What values will we need to know about the structure for our queue to function properly?
 
 
-![Testing](https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/Jellybean%20LP%20Cover.jpg?raw=true)
+![Figure 1][figure1]
+
+[figure1]:(https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/Jellybean%20LP%20Cover.jpg?raw=true)
 
