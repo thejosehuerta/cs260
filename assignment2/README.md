@@ -6,7 +6,8 @@ Assignment 2
 ---
 #### 1.  Based on what we know about linked lists, stacks, and queues, design a queue data structure:
     a.  What functions are we likely to need for a queue?
-    testing
+    
+        Similar to a stack, we would need a peek function (gets the front element without removing it), isfull function (checks to see if the queue is full), and         an isempty function (checks to see if the queue is empty). Furthermore, we would also need an enqueue function that adds an item to the queue, and a             dequeue function that removes an item from the queue.
     
     b.  What values will we need to know about the structure for our queue to function properly?
 
