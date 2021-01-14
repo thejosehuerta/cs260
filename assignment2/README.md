@@ -13,5 +13,5 @@ Assignment 2
 
 ![Figure 1][figure1]
 
-[figure1]:(https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/Jellybean%20LP%20Cover.jpg?raw=true)
+[figure1]: https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/Jellybean%20LP%20Cover.jpg?raw=true
 
