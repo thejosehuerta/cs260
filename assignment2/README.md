@@ -15,8 +15,8 @@ Assignment 2
         A queue data structure is open at both ends where one end is always used to insert data, and the 
         other is used to remove data. Much like the example of a one-way road:
         
-        ![queue example][queu]
-        [queu]: https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/queue.jpg
+![queue example][queue]
+[queue]: https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/queue.jpg?raw=true
         
         
 
