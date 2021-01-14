@@ -16,7 +16,7 @@ Assignment 2
         other is used to remove data. Much like the example of a one-way road:
         
         ![queue example][queue]
-        [queue]: 
+        
 
 #### 2.  Based on what we know about linked lists, design a list data structure that allows us to add (insert) or remove (delete) values at a given location in the list (instead of the top of a stack or the front or back of a queue):
     a.  What functions are we likely to need for a list to function like this?
@@ -28,7 +28,7 @@ Assignment 2
 
 
 
-
+[queue]: https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/queue.jpg?raw=true
 
 
 
