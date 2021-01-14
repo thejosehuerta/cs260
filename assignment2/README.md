@@ -36,7 +36,10 @@ Assignment 2
         precede (the right node). Then, the node that is on the left side of our new node, will need its next value
         to point to the new node. 
         
+#### Linked List insert example. 
 ![linked list example][linkedlist]
+[Source](https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm)
+
 [linkedlist]: https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/linkedlist.jpg?raw=true
 
 
