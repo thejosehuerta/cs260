@@ -17,7 +17,8 @@ Assignment 2
         other is used to remove data. There are two main functions in queues: enqueue (inserts data) and 
         dequeue (removes data). In order for our queue to function properly, we would need front and rear values
         (or more specifically, pointers) to point to the next empty space to add data or point to the front of the
-        queue in order to remove it.     
+        queue in order to remove it.   
+        
 ---
 #### 2.  Based on what we know about linked lists, design a list data structure that allows us to add (insert) or remove (delete) values at a given location in the list (instead of the top of a stack or the front or back of a queue):
     a.  What functions are we likely to need for a list to function like this?
@@ -34,6 +35,10 @@ Assignment 2
         in order to add values at a given location, we need to point the new node's next field to the exisiting node it will 
         precede (the right node). Then, the node that is on the left side of our new node, will need its next value
         to point to the new node. 
+        
+![linked list example][linkedlist]
+[linkedlist]: https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/linkedlist.jpg?raw=true
+
 
 
 
