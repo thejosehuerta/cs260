@@ -22,10 +22,18 @@ Assignment 2
 #### 2.  Based on what we know about linked lists, design a list data structure that allows us to add (insert) or remove (delete) values at a given location in the list (instead of the top of a stack or the front or back of a queue):
     a.  What functions are we likely to need for a list to function like this?
     
-        testing
+        Some functions needed for a linked list include an insertion function, a deletion function, a display
+        function (displays the complete list), a search function (searches for a specific element), and a 
+        delete function.
     
     b.  What values will we need to know about the structure for our list to function properly?
-
+    
+        In order to create a properly functioning linked list, we will first need to visualize a linked list as a chain of nodes 
+        where every node points to the next node. Every link carries data and a link field called next that links to
+        the next link. This continues until the last link which points to null to mark the end of the list. 
+        in order to add values at a given location, we need to point the new node's next field to the exisiting node it will 
+        precede (the right node). Then, the node that is on the left side of our new node, will need its next value
+        to point to the new node. 
 
 
 
