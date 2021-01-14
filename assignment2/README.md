@@ -13,14 +13,11 @@ Assignment 2
     b.  What values will we need to know about the structure for our queue to function properly?
     
         A queue data structure is open at both ends where one end is always used to insert data, and the 
-        other is used to remove data. Much like the example of a one-way road:
-        
-![example][queue]
-
-[queue]: https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/queue.jpg
-        
-        
-
+        other is used to remove data. There are two main functions in queues: enqueue (inserts data) and 
+        dequeue (removes data). In order for our queue to function properly, we would need front and rear values
+        (or more specifically, pointers) to point to the next empty space to add data or point to the front of the queue in 
+        order to remove it.     
+---
 #### 2.  Based on what we know about linked lists, design a list data structure that allows us to add (insert) or remove (delete) values at a given location in the list (instead of the top of a stack or the front or back of a queue):
     a.  What functions are we likely to need for a list to function like this?
     testing
