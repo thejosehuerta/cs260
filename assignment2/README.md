@@ -15,7 +15,9 @@ Assignment 2
         A queue data structure is open at both ends where one end is always used to insert data, and the 
         other is used to remove data. Much like the example of a one-way road:
         
-        ![queue example][queue]
+        ![queue example](https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/queue.jpg?raw=true)
+        
+        
         
 
 #### 2.  Based on what we know about linked lists, design a list data structure that allows us to add (insert) or remove (delete) values at a given location in the list (instead of the top of a stack or the front or back of a queue):
@@ -28,7 +30,7 @@ Assignment 2
 
 
 
-[queue]: https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/queue.jpg?raw=true
+
 
 
 
