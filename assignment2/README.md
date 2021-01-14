@@ -18,7 +18,12 @@ Assignment 2
         dequeue (removes data). In order for our queue to function properly, we would need front and rear values
         (or more specifically, pointers) to point to the next empty space to add data or point to the front of the
         queue in order to remove it.   
-        
+![queue example][queue]
+
+[queue]: https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/queue_example.jpg?raw=true
+
+[Source](https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm)
+
 ---
 #### 2.  Based on what we know about linked lists, design a list data structure that allows us to add (insert) or remove (delete) values at a given location in the list (instead of the top of a stack or the front or back of a queue):
     a.  What functions are we likely to need for a list to function like this?
@@ -38,7 +43,8 @@ Assignment 2
         
 #### Linked List insert example. 
 ![linked list example][linkedlist]
-[Source](https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm)
+
+[Source](https://www.tutorialspoint.com/data_structures_algorithms/linked_list_algorithms.htm)
 
 [linkedlist]: https://github.com/thejosehuerta/cs260/blob/main/assignment2/images/linkedlist.jpg?raw=true
 
