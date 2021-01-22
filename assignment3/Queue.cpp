@@ -7,6 +7,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
+//Construct a queue
 Queue::Queue() {
     front = NULL;
     rear = NULL;
@@ -44,7 +45,7 @@ void Queue::Enqueue(int new_value) {
 void Queue::Dequeue() {
     Node *temp = front;
     if(isEmpty()) {
-        cout << "Queue is empty!" << endl;
+        cout << "Queue is empty! Nothing to dequeue." << endl;
         return;
     }
     if(front == rear) {
@@ -57,9 +58,23 @@ void Queue::Dequeue() {
 
 int Queue::Front() {
     if(isEmpty()) {
-        cout << "Queue is empty!" << endl;
+        cout << "Queue is empty! No element in front." << endl;
         return -1;
     } else {
         return front->data;
+    }
+}
+
+void Queue::Print() {
+    if(isEmpty()) {
+        cout << "Queue is empty! Nothing to print." << endl;
+        return;
+    } else {
+        Node *temp = front;
+        while(temp != NULL) {
+            cout << temp->data << endl;
+            temp = temp->next;
+        }
+        return;
     }
 }

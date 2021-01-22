@@ -11,4 +11,5 @@ class Queue {
         void Enqueue(int new_value);
         void Dequeue();
         int Front();   
+        void Print();
 };
