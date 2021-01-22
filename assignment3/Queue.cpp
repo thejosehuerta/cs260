@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <iostream>
+#include <string>
 #include "Queue.h"
 
+using std::string;
 using std::cout;
 using std::endl;
 
@@ -10,6 +12,17 @@ Queue::Queue() {
     rear = NULL;
 }
 
+/*Simple function that checks whether queue is empty
+or not (by checking whether or not both 'front' and 'rear' are NULL)*/
+bool Queue::isEmpty() {
+    bool empty = true;
+    if(front == NULL && rear == NULL) {
+        return empty;
+    } else {
+        empty = false;
+        return empty;
+    }
+}
 
 void Queue::Enqueue(int new_value) {
     //Create a new node
@@ -18,7 +31,8 @@ void Queue::Enqueue(int new_value) {
     temp->data = new_value;
     //New node will point to null 
     temp->next = 0;
-    if(front == NULL && rear == NULL) {
+    //Calls isEmpty() function to check if queue is empty
+    if(isEmpty()) {
         front = rear = temp;
         return;    
     } else {
@@ -27,8 +41,22 @@ void Queue::Enqueue(int new_value) {
     }
 }
 
+void Queue::Dequeue() {
+    Node *temp = front;
+    if(isEmpty()) {
+        cout << "Queue is empty!" << endl;
+        return;
+    }
+    if(front == rear) {
+        front = rear = NULL;
+    } else {
+        front = front->next;
+    }
+    free(temp);
+}
+
 int Queue::Front() {
-    if(front == NULL) {
+    if(isEmpty()) {
         cout << "Queue is empty!" << endl;
         return -1;
     } else {

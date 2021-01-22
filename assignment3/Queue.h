@@ -7,10 +7,8 @@ class Queue {
 
     public:
         Queue();
+        bool isEmpty();
         void Enqueue(int new_value);
-        int Dequeue();
-        int Front(); //"peek"
-        void isEmpty();
-
-       
+        void Dequeue();
+        int Front();   
 };

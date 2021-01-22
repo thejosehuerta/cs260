@@ -9,9 +9,14 @@ int main(int argc, char **argv) {
     cout << "my_queue->Front: " << my_queue->Front() << endl;
 
     my_queue->Enqueue(3);
-    my_queue->Enqueue(6);
+    //my_queue->Enqueue(6);
 
     cout << "my_queue->Front: " << my_queue->Front() << endl;
+
+    my_queue->Dequeue();
+
+    cout << "my_queue->Front: " << my_queue->Front() << endl;
+
 
 
 
