@@ -29,8 +29,7 @@ Assignment 2
     a.  What functions are we likely to need for a list to function like this?
     
         Some functions needed for a linked list include an insertion function, a deletion function, a display
-        function (displays the complete list), a search function (searches for a specific element), and a 
-        delete function.
+        function (displays the complete list), and a search function (searches for a specific element).
     
     b.  What values will we need to know about the structure for our list to function properly?
     
