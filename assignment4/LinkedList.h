@@ -11,4 +11,5 @@ class LinkedList {
         void Remove(int n);
         int Retrieve(int n);
         void Print();
+        int Count();
 };

@@ -60,7 +60,6 @@ void LinkedList::Remove(int n) {
 int LinkedList::Retrieve(int n) {
     //Create node "temp1" to point to (n-1)th node in list
     Node *temp1 = head;
-    //if deleting first element (n = 1)
     if(n == 1) {
         //Make head now point to the second node in list
         return temp1->data;
@@ -76,10 +75,21 @@ int LinkedList::Retrieve(int n) {
 //Prints all elements in LinkedList
 void LinkedList::Print() {
     Node *temp = head;
+    cout << "Head -> ";
     while(temp != NULL) {
-        cout << temp->data << "\t";
+        cout << temp->data << " -> ";
         temp = temp->next;
     }
+    cout << "NULL" << endl;
     cout << endl;
+}
 
+int LinkedList::Count() {
+    Node *temp = head;
+    int num = 0;
+    while(temp != NULL) {
+        num++;
+        temp = temp->next;
+    }
+    return num;
 }

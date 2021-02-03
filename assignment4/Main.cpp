@@ -33,12 +33,23 @@ int returnNumeric(string str) {
     }
 }
 
+/*Function to simply return a message stating that the user's input
+is invalid. It saves time typing it out all the time. */
+string invalidInput(string str){
+    string message;
+    message = "'" + str + "'" + " is not a valid input.";
+    cout << endl << "----------------------------------" << endl;
+    cout << message;
+    cout << endl << "----------------------------------" << endl;
+    return "pop";
+}
+
 //Main
 int main(int argc, char **argv) {
     //new linked list is created!
     LinkedList *my_linkedlist = new LinkedList();
 
-    bool running1 = true;
+    bool running = true;
     cout << endl << "----------------------------------" << endl;
     cout << "Welcome to your linked-list!";
     cout << endl << "----------------------------------" << endl;
@@ -51,17 +62,15 @@ int main(int argc, char **argv) {
     is used to make sure the input is numeric before continuing. */
     string size_input;
     int size_num;
-    while(running1) {
+    while(running) {
         cout << "Enter the number of integers you initially want in your list: ";
         cin >> size_input;
         //checks for numeric input.
         size_num = returnNumeric(size_input);
         if(size_num == -1) {
-            cout << endl << "----------------------------------" << endl;
-            cout << "'" << size_input << "'" << " is not a valid input.";
-            cout << endl << "----------------------------------" << endl;
+            invalidInput(size_input);
         } else {;
-            running1 = false;
+            running = false;
         }
     }
 
@@ -83,9 +92,7 @@ int main(int argc, char **argv) {
         cin >> list_input;
         list_num = returnNumeric(list_input);
         if(list_num == -1) {
-            cout << endl << "----------------------------------" << endl;
-            cout << "'" << list_input << "'" << " is not a valid input.";
-            cout << endl << "----------------------------------" << endl;
+            invalidInput(list_input);
             cout << endl << "Your current list: " << endl;
             my_linkedlist->Print();
             i--;
@@ -95,8 +102,98 @@ int main(int argc, char **argv) {
             my_linkedlist->Print();
         }    
     }
-     cout << endl << "2";
+    cout << "----------------------------------" << endl;
+    cout << "Awesome! You have successfully created a Linked-List!";
+    cout << endl << "----------------------------------" << endl;
+    cout << "You currently have a list with " << size_num << " integers:" << endl;
+    my_linkedlist->Print();
 
+    running = true;
+    cout << endl << "----------------------------------" << endl;
+    cout << "Now, enter a choice and go crazy with the functions!";
+    cout << endl << "----------------------------------" << endl;
+
+    while(running) {
+        cout << endl << "----------------------------------" << endl;
+        cout << "What do you want to do?";
+        cout << endl << "----------------------------------" << endl;
+        cout << endl << "1. Insert an integer at any position in the list";
+        cout << endl << "2. Remove an integer at any position in the list";
+        cout << endl << "3. Retrieve an integer at any position in the list";
+        cout << endl << "4. Print linked-list";
+        cout << endl << "5. Exit" << endl;
+
+        string choice_input;
+        int choice_num;
+
+        string pos_input;
+        int pos_num;
+
+        string element_input;
+        int element_num;
+         
+        cout << "Your choice: ";
+        cin >> choice_input;
+
+        choice_num = returnNumeric(choice_input);
+        if(choice_num == -1) {
+            invalidInput(choice_input);
+        } else {
+            switch(choice_num){
+            case 1:
+                cout << endl << "Enter the integer you wish to add: ";
+                cin >> element_input;
+                element_num = returnNumeric(element_input);
+                if(element_num == -1) {
+                    invalidInput(element_input);
+                } else {
+                    cout << endl << "Enter the position you wish to insert this integer in: ";
+                    cin >> pos_input;
+                    pos_num = returnNumeric(pos_input);
+                    if(pos_num == -1) {
+                        invalidInput(pos_input);
+                    } else {
+                        if(pos_num < 1 || pos_num > my_linkedlist->Count()) {
+                            cout << endl << "----------------------------------" << endl;
+                            cout << "Invalid position!";
+                            cout << endl << "----------------------------------" << endl;
+                        } else {
+                            my_linkedlist->Insert(element_num, pos_num);
+                        cout << endl << "'" << element_num << "' successfully added to position " << "'" << pos_num << "'!" << endl;
+                        }   
+                    }
+                }
+                break;    
+            case 2:
+                break;  
+            case 3:
+                
+                break;  
+            case 4:
+                cout << endl << "You currently have " << my_linkedlist->Count() << " elements in your linked-list:" << endl;
+                my_linkedlist->Print();
+                break;  
+            case 5:
+                cout << "Exiting." << endl;
+                running = false;
+                break;  
+            default:
+                cout << endl << "----------------------------------" << endl;
+                cout << "Out of range.";
+                cout << endl << "----------------------------------" << endl;
+                break;
+
+            }
+
+
+
+
+        }
+
+    }
+
+
+     
   
 
     return 0;
