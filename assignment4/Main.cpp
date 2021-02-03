@@ -41,7 +41,7 @@ string invalidInput(string str){
     cout << endl << "----------------------------------" << endl;
     cout << message;
     cout << endl << "----------------------------------" << endl;
-    return "pop";
+    return "";
 }
 
 //Main
