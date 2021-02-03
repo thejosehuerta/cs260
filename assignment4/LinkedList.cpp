@@ -84,6 +84,7 @@ void LinkedList::Print() {
     cout << endl;
 }
 
+//Counts the number of elements present in the list and returns said number
 int LinkedList::Count() {
     Node *temp = head;
     int num = 0;

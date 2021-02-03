@@ -109,7 +109,7 @@ int main(int argc, char **argv) {
     my_linkedlist->Print();
 
     running = true;
-    cout << endl << "----------------------------------" << endl;
+    cout << "----------------------------------" << endl;
     cout << "Now, enter a choice and go crazy with the functions!";
     cout << endl << "----------------------------------" << endl;
 
@@ -159,15 +159,53 @@ int main(int argc, char **argv) {
                             cout << endl << "----------------------------------" << endl;
                         } else {
                             my_linkedlist->Insert(element_num, pos_num);
-                        cout << endl << "'" << element_num << "' successfully added to position " << "'" << pos_num << "'!" << endl;
+                            cout << endl << "'" << element_num << "' successfully added to position " << "'" << pos_num << "'!" << endl;
                         }   
                     }
                 }
                 break;    
             case 2:
+                cout << endl << "You currently have " << my_linkedlist->Count() << " elements in your linked-list:" << endl;
+                my_linkedlist->Print();
+                cout << "----------------------------------" << endl;
+                cout << "To remove an element from the first position, enter a '1', to remove an element from the second position enter a '2'." << endl;
+                cout << "Use this logic to remove an element from a position of your choice.";
+                cout << endl << "----------------------------------" << endl;
+                cout << "Enter a number: ";
+                cin >> pos_input;
+                pos_num = returnNumeric(pos_input);
+                if(pos_num == -1) {
+                    invalidInput(pos_input);
+                } else {
+                    if(pos_num < 1 || pos_num > my_linkedlist->Count()) {
+                        cout << endl << "----------------------------------" << endl;
+                        cout << "Invalid position!";
+                        cout << endl << "----------------------------------" << endl;
+                    } else {
+                        my_linkedlist->Remove(pos_num);
+                        cout << endl << "Element at position '" << pos_num << "' successfully removed!" << endl;
+                    }
+                }
                 break;  
-            case 3:
-                
+                    case 3:
+                    cout << endl << "----------------------------------" << endl;
+                    cout << "Enter a position to retrieve the element currently living there.";
+                    cout << endl << "----------------------------------" << endl;
+                    cout << "Enter a number: ";
+                    cin >> pos_input;
+                    pos_num = returnNumeric(pos_input);
+                    if(pos_num == -1) {
+                        invalidInput(pos_input);
+                    } else {
+                        if(pos_num < 1 || pos_num > my_linkedlist->Count()) {
+                            cout << endl << "----------------------------------" << endl;
+                            cout << "Invalid position!";
+                            cout << endl << "----------------------------------" << endl;
+                        } else {
+                            element_num = my_linkedlist->Retrieve(pos_num);
+                            cout << endl << "Element at position '" << pos_num << "' is currently: '" << element_num << "'!" << endl;
+                        }
+                    }  
                 break;  
             case 4:
                 cout << endl << "You currently have " << my_linkedlist->Count() << " elements in your linked-list:" << endl;
@@ -182,19 +220,10 @@ int main(int argc, char **argv) {
                 cout << "Out of range.";
                 cout << endl << "----------------------------------" << endl;
                 break;
-
             }
-
-
-
-
         }
 
     }
-
-
-     
-  
 
     return 0;
 }
