@@ -58,8 +58,19 @@ void LinkedList::Remove(int n) {
 
 //Retrieves an element from the list at the nth position
 int LinkedList::Retrieve(int n) {
-    Node *temp = head;
-    return temp->data;
+    //Create node "temp1" to point to (n-1)th node in list
+    Node *temp1 = head;
+    //if deleting first element (n = 1)
+    if(n == 1) {
+        //Make head now point to the second node in list
+        return temp1->data;
+    }
+    for(int i = 0; i < n - 2; i++) {
+        temp1 = temp1->next;
+    }
+    //Create node "temp2" to point to nth node
+    Node *temp2 = temp1->next;
+    return temp2->data;
 }
 
 //Prints all elements in LinkedList
