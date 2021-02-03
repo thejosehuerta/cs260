@@ -22,12 +22,14 @@ void LinkedList::Insert(int data, int n) {
     temp1->data = data;
     temp1->next = NULL;
     //Inserting at the head (front of the list)
+    //Time complexity of O(1) constant time because if n = 1, it will always add at the front.
     if(n == 1) {
         temp1->next = head;
         head = temp1;
         return;
     }
     Node *temp2 = head;
+    //Time complexity for this is O(n). It will always need to traverse throughout the list in order to find nth position
     for(int i = 0; i < n - 2; i++) {
         temp2 = temp2->next;
     }
@@ -40,12 +42,14 @@ void LinkedList::Remove(int n) {
     //Create node "temp1" to point to (n-1)th node in list
     Node *temp1 = head;
     //if deleting first element (n = 1)
+    //Time complexity of O(1) constant time because if n = 1, it will always remove the front.
     if(n == 1) {
         //Make head now point to the second node in list
         head = temp1->next;
         free(temp1);
         return;
     }
+    //Time complexity for this is O(n). It will always need to traverse throughout the list in order to find nth position
     for(int i = 0; i < n - 2; i++) {
         temp1 = temp1->next;
     }
@@ -60,10 +64,12 @@ void LinkedList::Remove(int n) {
 int LinkedList::Retrieve(int n) {
     //Create node "temp1" to point to (n-1)th node in list
     Node *temp1 = head;
+    //Time complexity of O(1) constant time because if n = 1, it will always return the front.
     if(n == 1) {
         //Make head now point to the second node in list
         return temp1->data;
     }
+    //Time complexity for this is O(n). It will always need to traverse throughout the list in order to find nth position
     for(int i = 0; i < n - 2; i++) {
         temp1 = temp1->next;
     }
@@ -76,6 +82,7 @@ int LinkedList::Retrieve(int n) {
 void LinkedList::Print() {
     Node *temp = head;
     cout << "Head -> ";
+    //Time complexity for this is O(n). It will always need to traverse throughout the list in order to find nth position
     while(temp != NULL) {
         cout << temp->data << " -> ";
         temp = temp->next;
@@ -88,6 +95,7 @@ void LinkedList::Print() {
 int LinkedList::Count() {
     Node *temp = head;
     int num = 0;
+    //Time complexity for this is O(n). It will always need to traverse throughout the list in order to find nth position
     while(temp != NULL) {
         num++;
         temp = temp->next;
