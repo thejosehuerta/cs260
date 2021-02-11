@@ -11,7 +11,7 @@ and knew I had to:
 2.  Create a new function that searches for a specific integer.
 3.  Not required, but using similar logic as the function above, delete a specific integer.
 
-##### For my Insert() function:
+#### For my Insert() function:
 All I did was add if loops and modify my pointers to basically satisfy three conditions:
 If I have a list of 5 elements: 1 -> 3 -> 4 -> 5 -> 8 
 1.  Insert at the head of the list when the number I want to insert is smaller than the first element in the list, i.e. inserting a '0' in the list above.
@@ -30,5 +30,5 @@ list until the number is found instead of searching through the entire list.
 [bigochart]: https://miro.medium.com/max/2544/1*FkQzWqqIMlAHZ_xNrEPKeA.png
 
 For the time complexity, it didn't change much compared to assignment 4. For the most part, in continues to be O(n) except for inserting/deleting at the head of the
-list. The Delete() and Search() functions have been updgraded to search in traversal order until it finds the number in the list, but worst case scenario will end 
+list, which run at constant time O(1). The Delete() and Search() functions have been updgraded to search in traversal order until it finds the number in the list, but worst case scenario will end 
 up being O(n).
