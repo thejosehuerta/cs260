@@ -33,7 +33,7 @@ void LinkedList::Insert(int data) {
         //Traverse through list to find where to insert "data"
         /*By the end of this loop, "prev" should point to the node "temp1" will go after,
         and "current" will be the node that "temp1" will precede*/
-        while(current != NULL && current->data < data) {
+        while(current != NULL && current->data <= data) {
             prev = current;
             current = current->next;
         }
@@ -49,21 +49,7 @@ void LinkedList::Insert(int data) {
     }  
 
     }
-    
-    
-        
-    
-    /*
-    Node *temp2 = head;
-    //Time complexity for this is O(n). It will always need to traverse throughout the list in order to find nth position
-    for(int i = 0; i < n - 2; i++) {
-        temp2 = temp2->next;
-    }
-    temp1->next = temp2->next;
-    temp2->next = temp1;
-    
-}
-*/
+ 
 //Removes an element from the list at the "n"th position
 void LinkedList::Remove(int n) {
     //Create node "temp1" to point to (n-1)th node in list
@@ -87,6 +73,117 @@ void LinkedList::Remove(int n) {
     free(temp2);
 }
 
+void LinkedList::Delete(int data) {
+    Node *temp = head;
+    Node *temp1 = head;
+    int num = 0;
+    //checks if list is empty
+    if(temp1 == NULL) {
+        cout << "----------------------------------" << endl;
+        cout << "List is empty! Insert an element before deleting!" << endl;
+        cout << "----------------------------------" << endl;
+        return;
+    }
+    //if "data" is first element in list
+    if(temp1->data == data) {
+        cout << "----------------------------------" << endl;
+        cout << "'" << data << "'" << " found in the first position!" << endl;
+        head = temp1->next;
+        free(temp1);
+        cout << "Element deleted." << endl;
+        cout << "----------------------------------" << endl;  
+        return;
+    }
+
+    //while loop traverses through list until data is no longer greater than temp1->data
+    while(temp1->next != NULL && temp1->data < data) {
+        temp1 = temp1->next;
+        //num is for counting how many times it takes until loop breaks, i.e. temp1 points to the node
+        //containing the integer closest to "data"
+        num++;
+        temp = temp->next;
+        if(num == 1) {
+            temp = head;
+        }
+    }
+
+    if(temp1->next == NULL) {
+        temp->next = NULL;
+        free(temp1);
+    }
+    //This is true when all elements in list are searched and "data" is both not found and bigger than any element in the list
+    if(temp1->next == NULL && data > temp1->data) {
+        cout << "----------------------------------" << endl;
+        cout << "Searched through all " << num + 1 << " elements and " << "'" << data << "' was not found!" << endl;
+        cout << "No elements were deleted." << endl;
+        cout << "----------------------------------" << endl;
+    }
+    //This is true when "data" is found in the list
+    else if(temp1->data == data) {
+        cout << "----------------------------------" << endl;
+        cout << "'" << data << "'" << " found!" << endl;
+        cout << num << " elements were traversed before finding '" << data << "'!" << endl;
+        //if "data" is last element in the list
+        if(temp1->next == NULL) {
+            Node *temp2 = temp1->next;
+            temp->next = NULL;
+            free(temp2);
+            cout << "Last element deleted!" << endl;
+            cout << "----------------------------------" << endl;  
+        } else {
+        //Create node "temp2" to point to nth node
+        Node *temp2 = temp1->next;
+        //Then, make temp1 point to (n+1)th node
+        temp->next = temp2;
+        free(temp1);
+        cout << "Element deleted." << endl;
+        cout << "----------------------------------" << endl;  
+        }    
+      ////This is true when all elements in list are searched and "data" is both not found and SMALLER than any element in the list
+    } else {
+        cout << "----------------------------------" << endl;
+        cout << "Your number was smaller than any number in the list. '" << data << "' was not found!" << endl;
+        cout << "No elements were deleted." << endl;
+        cout << "----------------------------------" << endl;
+    }
+}
+
+//Searches LinkedList for "data" parameter.
+void LinkedList::Search(int data) {
+    Node *temp1 = head;
+    int num = 0;
+    //checks if list is empty
+    if(temp1 == NULL) {
+        cout << "List is empty! Insert an element first!" << endl;
+        return;
+    }
+    //while loop traverses through list until data is no longer greater than temp1->data
+    while(temp1->next != NULL && temp1->data < data) {
+        temp1 = temp1->next;
+        //num is for counting how many times it takes until loop breaks, i.e. temp1 points to the node
+        //containing the integer closest to "data"
+        num++;
+    }
+    //This is true when all elements in list are searched and "data" is both not found and bigger than any element in the list
+    if(temp1->next == NULL && data > temp1->data) {
+        cout << "----------------------------------" << endl;
+        cout << "Searched through all " << num + 1 << " elements and " << "'" << data << "' was not found!" << endl;
+        cout << "----------------------------------" << endl;
+    }
+    //This is true when "data" is found in the list
+    else if(temp1->data == data) {
+        cout << "----------------------------------" << endl;
+        cout << "'" << data << "'" << " found!" << endl;
+        cout << num << " elements were traversed before finding '" << data << "'!" << endl;
+        cout << "----------------------------------" << endl;      
+      ////This is true when all elements in list are searched and "data" is both not found and SMALLER than any element in the list
+    } else {
+        cout << "----------------------------------" << endl;
+        cout << "Your number was smaller than any number in the list. '" << data << "' was not found!" << endl;
+        cout << "----------------------------------" << endl;
+    }
+}
+
 //Retrieves an element from the list at the nth position
 int LinkedList::Retrieve(int n) {
     //Create node "temp1" to point to (n-1)th node in list
@@ -104,6 +201,8 @@ int LinkedList::Retrieve(int n) {
     Node *temp2 = temp1->next;
     return temp2->data;
 }
+
+
 
 //Prints all elements in LinkedList
 void LinkedList::Print() {
