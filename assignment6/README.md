@@ -23,6 +23,6 @@ delete a specific value from the tree** and a **function to traverse the tree an
 #### Traverse Function:
 * For this function, we need to make sure our BST is sorted, i.e. the Insert function is working properly, first. Then we need to implement at least one of the common traversal methods (e.g. pre-order, in-order, etc.) in this function. 
 ### 2. Implementation
-> ***Nodes to store values***<br>
+> ***Nodes to store values***
 
 Creating a node to store values is as simple as creating a "Node" struct and having it be composed of an *int, pointer to left Node, and pointer to right Node*.
