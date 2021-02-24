@@ -10,7 +10,7 @@ For this assignment, our duty was to complete three tasks:
     * At least one tree traversal function
 3. Analyze and compare the complexity of functions, including the difference between binary search trees that are ordered and unordered.
 ---
-### 1.  Create some tests for our BST to pass before coding.
+### 1.  Create some tests for our BST to pass before coding
 For a binary search tree, and for our assignment, we know we will need a **function to insert a value to the appropriate place**, a **function to
 delete a specific value from the tree** and a **function to traverse the tree and print the tree's elements**.
 #### Insert Function:
@@ -22,3 +22,6 @@ delete a specific value from the tree** and a **function to traverse the tree an
    3. The node we are trying to delete has two children.
 #### Traverse Function:
 * For this function, we need to make sure our BST is sorted, i.e. the Insert function is working properly, first. Then we need to implement at least one of the common traversal methods (e.g. pre-order, in-order, etc.) in this function. 
+### 2. Implementation
+> ***Nodes to store values***<br>
+Creating a node to store values is as simple as creating a "Node" struct and having it be composed of an *int, pointer to left Node, and pointer to right Node*.
