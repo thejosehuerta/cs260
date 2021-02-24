@@ -12,7 +12,7 @@ For this assignment, our duty was to complete three tasks:
 ---
 #### 1.  Create some tests for our BST to pass before coding.
 For a binary search tree, and for our assignment, we know we will need a **function to insert a value to the appropriate place**, a **function to
-delete a specific value from the tree** and a **function to traverse the tree and print the tree's elements**.<br>
+delete a specific value from the tree** and a **function to traverse the tree and print the tree's elements**.
 #### Insert Function:
 * For the Insert() function, we want to create a root node and have the function follow the ordering rule of ***any element less than or equal to the root's value will
 go to the left side***, and ***any element greater than the root's value will go to the right side***.
