@@ -9,12 +9,22 @@ using std::endl;
 int main(int argc, char **argv) {
     BST *tree = new BST();
 
-    tree->Insert(40);
-    tree->Insert(25);
-    tree->Insert(10);
+    tree->Insert(44);
+    tree->Insert(17);
     tree->Insert(32);
     tree->Insert(78);
+    tree->Insert(50);
+    tree->Insert(48);
+    tree->Insert(62);
+    tree->Insert(88);
 
-    tree->InOrderPrint();
+    tree->PrintPreOrder();
+    tree->PrintInOrder();
+    tree->PrintPostOrder();
+    tree->PrintLevelOrder();
+
+    cout << "min: " << tree->FindMin() << endl;
+
+
     return 0;
 }
