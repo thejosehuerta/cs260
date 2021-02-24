@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <iostream>
-#include <string>
 #include <queue>
 #include "BST.h"
 
-using std::string;
 using std::cout;
 using std::endl;
 using std::queue;
@@ -56,11 +54,29 @@ int BST::FindMin() {
 }
 
 //--------------------------------------------------
+//Function to find the maximum value in tree/sub-tree
+Node *BST::FindMax(Node *node) {
+    while(node->right != NULL) {
+        node = node->right;
+    }
+    return node;
+} 
+//FindMin function invoked and root is used as argument to return smallest value as an int
+int BST::FindMax() {
+    Node *temp = FindMax(root);
+    return temp->data;
+}
+
+//--------------------------------------------------
 //This function searches for the value to be deleted and returns its node
 Node *BST::Delete(Node *node, int data) {
     //if tree is empty
-    if(node == NULL) 
+    if(node == NULL) {
+        cout << endl << "----------------------------------" << endl;
+        cout << "Value not found.";
+        cout << endl << "----------------------------------" << endl;
         return node;
+    }
     /*if data is less than the current node's data (but not equal to), recursively 
     call Delete function to traverse through tree until node with value is found */
     else if(data < node->data) 
@@ -76,6 +92,9 @@ Node *BST::Delete(Node *node, int data) {
 		if(node->left == NULL && node->right == NULL) { 
 			delete node;
 			node = NULL;
+            cout << endl << "----------------------------------" << endl;
+            cout << "Value deleted!";
+            cout << endl << "----------------------------------" << endl;
 		}
 		//Case 2: Deleting a node with one child 
         //if left child is NULL
@@ -83,12 +102,18 @@ Node *BST::Delete(Node *node, int data) {
 			Node *temp = node;
 			node = node->right;
 			delete temp;
+            cout << endl << "----------------------------------" << endl;
+            cout << "Value deleted!";
+            cout << endl << "----------------------------------" << endl;
 		}
         //if right child is NULL
 		else if(node->right == NULL) {
 			Node *temp = node;
 			node = node->left;
 			delete temp;
+            cout << endl << "----------------------------------" << endl;
+            cout << "Value deleted!";
+            cout << endl << "----------------------------------" << endl;
 		}
 		// case 3: Deleting a node with two children
 		else { 
@@ -96,7 +121,9 @@ Node *BST::Delete(Node *node, int data) {
 			node->data = temp->data;
 			node->right = Delete(node->right, temp->data);
 		}
+        
 	}
+    
 	return node;
 }
 //
@@ -163,7 +190,8 @@ void BST::PrintPostOrder() {
     PrintPostOrder(root);
     cout << endl;
 }
-
+//--------------------------------------------------
+//Function to print the tree in "level-order" traversal
 void BST::PrintLevelOrder(Node *node) {
     if(node == NULL) return;
 	queue <Node*> Q;
@@ -179,7 +207,7 @@ void BST::PrintLevelOrder(Node *node) {
             Q.push(current->right);  
 	}
 }
-
+//Invoking PrintLevelOrder function and using root as the argument
 void BST::PrintLevelOrder() {
     PrintLevelOrder(root);
     cout << endl;
