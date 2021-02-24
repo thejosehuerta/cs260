@@ -14,5 +14,7 @@ For this assignment, our duty was to complete three tasks:
 For a binary search tree, and for our assignment, we know we will need a **function to insert a value to the appropriate place**, a **function to
 delete a specific value from the tree** and a **function to traverse the tree and print the tree's elements**.
 #### Insert Function:
-* For the Insert() function, we want to create a root node and have the function follow the ordering rule of ***any element less than or equal to the root's value will
-go to the left side***, and ***any element greater than the root's value will go to the right side***.
+* For the Insert function, when inserting an element into the tree, we want to follow the ordering rule of ***any element less than or equal to the root's value will go to the left side***, and ***any element greater than the root's value will go to the right side***. We want to make sure this aspect of the tree is working before doing anything else, as it is the foundation of our binary search tree.
+#### Delete Function:
+* For the Delete function, we will need to check for three cases:
+   1. this is a test
