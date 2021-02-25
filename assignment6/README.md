@@ -1,6 +1,6 @@
 ### Jose Huerta
 #### CS 260 - Assignment 6: Binary Search Tree (BST)
-#### Completed with the help of [mycodeschool](http://www.mycodeschool.com/work-outs/binary-search-trees)
+##### Completed with the help of [mycodeschool.com](http://www.mycodeschool.com/work-outs/binary-search-trees)
 ---
 For this assignment, our duty was to complete three tasks:
 1.  Create some tests for our BST to pass before coding.
