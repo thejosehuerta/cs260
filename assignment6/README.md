@@ -1,5 +1,6 @@
 ### Jose Huerta
 #### CS 260 - Assignment 6: Binary Search Tree (BST)
+#### Completed with the help of [mycodeschool](http://www.mycodeschool.com/work-outs/binary-search-trees)
 ---
 For this assignment, our duty was to complete three tasks:
 1.  Create some tests for our BST to pass before coding.
@@ -31,9 +32,21 @@ Creating a node to store values is as simple as creating a "Node" struct and hav
 For this function, I called it Insert() and I made sure it followed the rule of ordering (less than or equal values go to left sub-tree, greater values go to right sub-tree). Then, it recursively calls itself until it finds where it belongs. 
 > ***A remove function that finds and removes a value and then picks an appropriate replacement node***
 
-For this function, I called it Delete() and it passes the three cases stated in **step 1:**<br>
+For this function, I called it Delete() and first, similarly to the Insert() function, it recursively calls itself until the value it is searching for is found. then, it passes of the three cases stated in **step 1:**<br>
    1. ***The node we are trying to delete is a leaf node and has no children.***
       + Simply enough, we just unlink the node we wish to delete from its root node and deallocate it from memory.
    2. ***The node we are trying to delete has one child, either in the left side or the right side.***
-   
+      + In this case, a temporary node is created that points to the root node. Then the root node is pointed to either its left or right element (depending on           which one is NULL), then the temp pointer is deleted. Basically, it finds the node its meant to delete, fixes the links by unlinking itself and linking           its child to its root node, then the correct node is deleted.
    3. ***The node we are trying to delete has two children.***
+      + This case is a little trickier. A new function is created, called FindMin() that finds the minimum value in a sub-tree. In order to delete a node with           two children, the FindMin() function is utilized to find the minimum value of its right sub-tree and that value will replace the node we wish to delete.         Next, at this point we would have duplicate nodes (the replaced node and the original node). We use the logic from **case 2** described above to delete           the original node and then we're good. 
+> ***At least one tree traversal function***
+ 
+For this function, or I should say for these four functions, I applied the three common traversal methods (pre/in/post-order) and the level order traversal method.<br>
+***For the three common traversals:***<br>
+They were as simple as printing the node's data value, then either recursively traversing to the left, and right nodes. This obviously varied depending on what method of traversing was being applied.<br?
+***For the level order function:***<br>
+I utilized a video posted by [mycodeschool](https://www.youtube.com/watch?v=86g8jAQug04&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=33&ab_channel=mycodeschool)
+that utilized queue logic to print the tree's elements in a level order manner.
+
+
+### 3. Implementation
