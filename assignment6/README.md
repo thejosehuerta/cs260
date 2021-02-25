@@ -54,7 +54,7 @@ In worst case, a binary search tree would be no different than a singly-linked l
 ![skewed BST](https://www.gatevidyalay.com/wp-content/uploads/2018/08/Time-Complexity-of-Binary-Search-Tree-Worst-Case.png)
 <br>**Best Case:**<br>
 In best case, the BST is balanced, meaning every node has the maximum children nodes it can have. Time complexity of operations in a balanced BST become O(logn).
-![balanced BST](https://www.gatevidyalay.com/wp-content/uploads/2018/08/Time-Complexity-of-Binary-Search-Tree-Best-Case.png
+![balanced BST](https://www.gatevidyalay.com/wp-content/uploads/2018/08/Time-Complexity-of-Binary-Search-Tree-Best-Case.png)
 <br>**Ordered Vs. Unordered Binary Trees:**<br>
 We know the time complexity for an ordered BST, but for an unordered one it's no surprise that it's going to be different. Both have the same worst case time complexity, however, due to the fact that the unordered tree does not follow any rules of ordering, it's best case will be the same as its worst case: O(n).
 
