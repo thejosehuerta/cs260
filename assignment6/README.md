@@ -31,7 +31,7 @@ Creating a node to store values is as simple as creating a "Node" struct and hav
 For this function, I called it Insert() and I made sure it followed the rule of ordering (less than or equal values go to left sub-tree, greater values go to right sub-tree). Then, it recursively calls itself until it finds where it belongs. 
 > ***A remove function that finds and removes a value and then picks an appropriate replacement node***
 
-For this function, I called it Delete() and it passes the three cases stated in **step 1:***
+For this function, I called it Delete() and it passes the three cases stated in **step 1:**<br>
    ***1. The node we are trying to delete is a leaf node and has no children.***
      * Simply enough, we just unlink the node we wish to delete from its root node and deallocate it from memory.
    ***2. The node we are trying to delete has one child, either in the left side or the right side.***
