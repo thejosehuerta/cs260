@@ -45,6 +45,6 @@ For this function, or I should say for these four functions, I applied the three
 ***For the three common traversals:***<br>
 They were as simple as printing the node's data value, then either recursively traversing to the left, and right nodes. This obviously varied depending on what method of traversing was being applied.<br>
 ***For the level order function:***<br>
-I utilized a video posted by [mycodeschool](https://www.youtube.com/watch?v=86g8jAQug04&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=33&ab_channel=mycodeschool)
+I used a video posted by [mycodeschool](https://www.youtube.com/watch?v=86g8jAQug04&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P&index=33&ab_channel=mycodeschool)
 that utilized queue logic to print the tree's elements in a level order manner.
 ### 3. Time Complexity
