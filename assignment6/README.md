@@ -33,7 +33,7 @@ For this function, I called it Insert() and I made sure it followed the rule of 
 
 For this function, I called it Delete() and it passes the three cases stated in **step 1:**<br>
    1. ***The node we are trying to delete is a leaf node and has no children.***
-   + Simply enough, we just unlink the node we wish to delete from its root node and deallocate it from memory.
+      + Simply enough, we just unlink the node we wish to delete from its root node and deallocate it from memory.
    2. ***The node we are trying to delete has one child, either in the left side or the right side.***
    
    3. ***The node we are trying to delete has two children.***
