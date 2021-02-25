@@ -45,7 +45,7 @@ int main(int argc, char **argv) {
     cout << "      48  62" << endl;
 
     cout << endl << "------------------------------------------" << endl;
-    cout << "These are the tree's values printed in 4 different traversal order:" << endl << endl;
+    cout << "These are the tree's values printed in 4 different traversal orders:" << endl << endl;
     cout << "Pre-order: "; tree->PrintPreOrder();
     cout << "In-order: "; tree->PrintInOrder();
     cout << "Post-order: "; tree->PrintPostOrder();
