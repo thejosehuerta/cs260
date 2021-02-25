@@ -49,13 +49,13 @@ I used a video posted by [mycodeschool](https://www.youtube.com/watch?v=86g8jAQu
 that utilized queue logic to print the tree's elements in a level order manner.
 ### 3. Time Complexity
 When it comes to the time complexity of binary search trees, all operations are O(h), "h" being the height of the tree.
-<br>**Worst Case:**<br>
+#### Worst Case:
 In worst case, a binary search tree would be no different than a singly-linked list; a skewed tree.
 ![skewed BST](https://www.gatevidyalay.com/wp-content/uploads/2018/08/Time-Complexity-of-Binary-Search-Tree-Worst-Case.png)
-<br>**Best Case:**<br>
+#### Best Case:
 In best case, the BST is balanced, meaning every node has the maximum children nodes it can have. Time complexity of operations in a balanced BST become O(logn).<br>
 ![balanced BST](https://www.gatevidyalay.com/wp-content/uploads/2018/08/Time-Complexity-of-Binary-Search-Tree-Best-Case.png)
-<br>**Ordered Vs. Unordered Binary Trees:**<br>
+#### Ordered Vs. Unordered Binary Trees
 We know the time complexity for an ordered BST, but for an unordered one it's no surprise that it's going to be different. Both have the same worst case time complexity, however, due to the fact that the unordered tree does not follow any rules of ordering, it's best case will be the same as its worst case: O(n).
 
 
