@@ -6,6 +6,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
+//For every item in the table, "name" is NULL and their "next" points to NULL
 Hash::Hash() {
     for(int i = 0; i < table_size; i++) {
         HashTable[i] = new Item;
