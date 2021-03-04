@@ -46,7 +46,7 @@ stated above as follows:
      1. The value is the only one in the index. It does this by checking if its "next" pointer is NULL.
      2. The value is at the head of the index. It does this if it skips the first case, but the value is still a match.
      3. The value's hash value exists but is not at the head of the index. At this point, it knows it needs to traverse through the exisiting linked list to 
-        try and find the value. There could still be a chance it doesn't find it (in the case that the hash value exists but thee value does not), so at this             point, if it skips through all cases, it does not exist in the table. 
+        try and find the value. There could still be a chance it doesn't find it (in the case that the hash value exists but the value does not). At this                 point, if it skips through all cases, it does not exist in the table. 
 4. **void Delete(string name);**
    * This function takes a string, calculates its index value, finds it in the table, then deletes it.<br>
      This function checks for a number of cases:
