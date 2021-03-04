@@ -30,4 +30,32 @@ Per the requirements of this assignment, we know we will need to test at least f
       * Deleting at the end of the list
 ---
 ### 2 & 3.  Creating a Functional Hash Table
-test
+After initially creating a hash table that overwrote its old values with new ones, I went ahead and started making it smarter. I created and tested the functions 
+stated above as follows:
+1. **int HashValue(string name);**
+   * This function takes a string and calculates its hash value from said string.<br>
+      Let's say you want to insert the value "rat". First it adds up the ASCII values
+      of the string: r = 114 + a = 97 + t = 116 (sum of 327), mods it by the table size, and returns that value as the index for the hash table. In this case, it
+      is 327 % table_size (which is initially 10, but can be changed), and the result is 7. The index for "rat" would then be 7.
+2. **void Insert(string name);**
+   * This function takes a string, uses the HashValue() function to get its hash value, and inserts the string into the correct index in the hash table.<br>
+     In order to handle collisions, I decided to chain values together a la linked list. In order to keep the time complexity for this function at O(1), I            decided to always insert new values at the head of an index. 
+3. **void Contains(string name);**
+   * This function takes a string, gets its index value aka its hash value, and searches for it in the table.<br>
+     This function checks for three cases:
+     1. The value is the only one in the index. It does this by checking if its "next" pointer is NULL.
+     2. The value is at the head of the index. It does this if it skips the first case, but the value is still a match.
+     3. The value's hash value exists but is not at the head of the index. At this point, it knows it needs to traverse through the exisiting linked list to 
+        try and find the value. There could still be a chance it doesn't find it (in the case that the hash value exists but thee value does not), so at this             point, if it skips through all cases, it does not exist in the table. 
+4. **void Delete(string name);**
+   * This function takes a string, calculates its index value, finds it in the table, then deletes it.<br>
+     This function checks for a number of cases:
+     1.  If there is nothing in the index, it does not exist and nothing is deleted.
+     2.  If the values match, and its "next" pointer is NULL, then it is the only element in the index and is deleted.
+     3.  If the values match, but it skipped the last case, then it is at the head of the index and is deleted.
+     4.  If the hash value matches, but its value does not match the head of the index, then it is somewhere in the index's list.
+     5.  If the entire list is traversed and it is not found, then it does not exist in the index and therefore not found in the table. Nothing was deleted.
+     6.  If the list is traversed and it is found then it is deleted. It might be found somewhere in the middle of the list, ot at the end of the list.
+         Either way, the value is deleted and the links are fixed.
+5. **
+     
