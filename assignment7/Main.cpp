@@ -13,15 +13,19 @@ using std::isdigit;
 int main(int argc, char **argv) {
     Hash *Hashbrown = new Hash();
 
-    Hashbrown->Insert("Poop");
+    Hashbrown->Insert("Popo");
     Hashbrown->Insert("Poop");
     Hashbrown->Insert("ooPp");
-    Hashbrown->Insert("poPo");
     Hashbrown->Insert("Jose");
+    Hashbrown->Insert("Jose1");
+ 
+    Hashbrown->PrintTable();
+
+    Hashbrown->Delete("oPopfdfd");
+
+    Hashbrown->PrintTable();
 
 
-
-    
 
 
     return 0;
