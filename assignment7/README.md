@@ -54,8 +54,8 @@ stated above as follows:
      2.  If the values match, and its "next" pointer is NULL, then it is the only element in the index and is deleted.
      3.  If the values match, but it skipped the previous case, then it is at the head of the index and is deleted.
      4.  If the hash value matches, but its value does not match the head of the index, then it is somewhere in the index's list.
-     5.  If the entire list is traversed and it is not found, then it does not exist in the index and therefore not found in the table. Nothing was deleted.
-     6.  If the list is traversed and it is found then it is deleted. It might be found somewhere in the middle of the list, ot at the end of the list.
-         Either way, the value is deleted and the links are fixed.
+         + If the entire list is traversed and it is not found, then it does not exist in the index and therefore not found in the table. Nothing was deleted.
+         + If the list is traversed and it is found then it is deleted. It might be found somewhere in the middle of the list, ot at the end of the list.
+           Either way, the value is deleted and the links are fixed.
 5. **
      
