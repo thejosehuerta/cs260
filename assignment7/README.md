@@ -62,5 +62,7 @@ stated above as follows:
      This function was created to simply not only create a way for us humans to read the data, but to also make sure the other functions are working properly.
 ---
 ### 4. Time Complexity
-test
-     
+For the time complexity in this program, the Contains(), and Delete() functions are nearly identical. Both share a time complexity of O(n) as its worst case
+as it would have to traverse through an entire linked list to find a value. For the Insert() function, its time complexity is O(1) as I decided to always insert
+values at the head of every index. Lastly, for the PrintTable() function, its time complexity is O(n), as it will always have to traverse through not just every index in the list, but also every index's contents.
+  
