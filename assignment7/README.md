@@ -14,7 +14,7 @@ For this assignment, our duty was to complete four main tasks:
 ### 1.  Tests
 Per the requirements of this assignment, we know we will need to test at least four different functions:
 1.  Some Hash function that takes a value and calculates its hash value.
-    + We need to make sure this calculation makes sense and is consistent for its the foundation for the rest of the program.
+    + We need to make sure this calculation makes sense and is consistent for it is the foundation for the rest of the program.
 2.  An Insert function that inserts a value into the hash table based on its hash value.
     + Apart from inserting a value correctly, we need a way to handle collisions. 
 3.  A Contains function that searches for a value and returns whether or not said value exists in the table.
