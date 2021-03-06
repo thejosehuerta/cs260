@@ -26,7 +26,8 @@ int main(int argc, char **argv) {
     cout << "It can hold strings (names, places, etc.) and will be pre-filled with values." << endl;
     
     //Initial values present in the table
-    string names[] = {"cats", "cast", "James", "guitar", "dare", "read", "rabbit"};
+    string names[] = {"cats", "cast", "guitar", "dare", 
+        "read", "rabbit", "tar", "rat", "arc", "car"};
     int names_size = sizeof(names)/sizeof(names[0]);
     //adding the values to the table
     for(int i = 0; i < names_size; i++) {
@@ -74,7 +75,6 @@ int main(int argc, char **argv) {
                 cout << endl << "Enter the value you wish to delete from the table:" << endl;
                 cin >> value_input;
                 Hashbrown->Delete(value_input);
-                
                 break;
             case 3:
                 cout << endl << "Enter the value you wish to look for in the table:" << endl;
