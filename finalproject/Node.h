@@ -1,9 +1,12 @@
 #include <string>
+
+
 using std::string;
+using std::pair;
 
 struct Node {
-    int data;
-    int cost;
+    pair<string, int> city;
+    int dist;
     Node *next;
 };
 

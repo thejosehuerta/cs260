@@ -11,18 +11,28 @@ int main(int argv, char **argc) {
     int V = 5;
     Graph *graph = new Graph(V);
     
-    graph->AddEdge(0,2);
-    graph->AddEdge(0,3);
-    graph->AddEdge(0,4);
-    graph->AddEdge(1,0);
-    graph->AddEdge(1,4);
-    graph->AddEdge(2,0);
-    graph->AddEdge(2,3);
-    graph->AddEdge(3,2);
-    graph->AddEdge(3,0);
-    graph->AddEdge(3,4);
-    graph->AddEdge(4,3);
-    graph->AddEdge(4,2);
+
+    graph->AddNode("LA");
+    graph->AddNode("SD");
+    graph->AddNode("NH");
+    graph->AddNode("NJ");
+    graph->AddNode("CA");
+    graph->AddNode("FL");
+
+    graph->AddNode("RI");
+
+    graph->PrintTest();
+    cout << endl;
+    graph->PrintGraph();
+    cout << endl;
+    graph->AddEdge("LA", "SD", 80);
+    graph->AddEdge("LA", "NJ", 45);
+    
+   
+
+
+    
+
 
     
   

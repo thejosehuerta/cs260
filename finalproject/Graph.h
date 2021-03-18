@@ -1,21 +1,28 @@
 #include <string>
-#include <vector>
+#include <set>
+#include <map>
 #include "Node.h"
 
 using std::string;
+using std::set;
+using std::pair;
+using std::map;
 
 class Graph {
     private:
-        int V;
-        //N is the number of nodes (vertices) in the graph
-        //static const int N = 5;
-        //Node *adj_list[];
-        adj_list *list;
+        set<string> city_names;
+        map<string, int> cities;
+
+        unsigned int V; //number of vertices
+        int current_id;
+        adj_list *list; //adjacency list containing head nodes
     public:
         Graph(int V);
-        Node *NewNode(int data);
-        void AddEdge(int src, int dest);
+        bool CityDNE(string name);
+        void AddNode(string name);
+        void AddEdge(string start, string end, int dist);
         void PrintGraph();
+        void PrintTest();
 
 
 };
