@@ -105,7 +105,6 @@ int main(int argv, char **argc) {
     cout << endl;
     cout << "Alright, just give me a couple nanoseconds and-" << endl;
     graph->AddEdge(city_name, city1_name, dist_num);
-    cout << "----------------------------------" << endl;
 
     cout << endl << "----------------------------------" << endl;
     cout << "Now that you have a couple cities to work with in your state, you choose what to do next.";
@@ -130,7 +129,7 @@ int main(int argv, char **argc) {
 
         cout << "Your choice: ";
         cin >> choice_input;
-
+        bool running1 = true;
         choice_num = returnNumeric(choice_input);
         if(choice_num == -1) {
             invalidInput(choice_input);
@@ -143,26 +142,27 @@ int main(int argv, char **argc) {
                 graph->AddNode(city_name);
                 break;
             case 2:
+                cin.ignore();
                 graph->PrintCities();
                 cout << "View the table above to check the spelling of your cities!" << endl;
                 cout << "Enter the name of the first city (the start): ";
                 getline(cin, city_name);
 
-                cout << "Enter the name of the first city (the start): ";
+                cout << "Enter the name of the second city (the end): ";
+                getline(cin, city1_name);
 
-                running = true;
-                while(running) {
-                    cout << "Enter the name of your second city: ";
-                    getline(cin, city1_name);
-                    if(city1_name == city_name) { 
-                        cout << endl << "----------------------------------" << endl;
-                        cout << "'" << city1_name << "' already exists! Try a different name!";
-                        cout << endl << "----------------------------------" << endl;
+                
+                while(running1) {
+                    cout << "Enter the distance (in miles, and as a number) you want between these two cities: ";
+                    getline(cin, dist_str);
+                    dist_num = returnNumeric(dist_str);
+                    if(dist_num <= 0) {
+                        invalidInput(dist_str);
                     } else {
-                        running = false;
+                        running1 = false;
                     }
                 }
-                graph->AddNode(city1_name);
+                graph->AddEdge(city_name, city1_name, dist_num);
                 break;
             case 3:
                 graph->PrintCities();
