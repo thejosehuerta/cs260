@@ -22,7 +22,7 @@ class Graph {
         void AddNode(string name);
         void AddEdge(string start, string end, int dist);
         void PrintGraph();
-        void PrintTest();
+        void PrintCities();
 
 
 };

@@ -9,6 +9,8 @@ using std::endl;
 using std::pair;
 using std::make_pair;
 
+
+
 //Constructs a graph with "V" nodes (aka vertices)
 Graph::Graph(int V) {
     this->V = V;
@@ -19,19 +21,23 @@ Graph::Graph(int V) {
     }
 }
 
-void Graph::PrintTest() {
-
-    cout << "city_names: " << endl;
+void Graph::PrintCities() {
+    cout << endl << "++++++++++++++++++++++++++++++++++" << endl;
+    cout << "Current Cities: ";
+    cout << endl << "++++++++++++++++++++++++++++++++++" << endl;
     set<string>::iterator it;
     for(it = city_names.begin(); it != city_names.end(); it++) {
         cout << *it << endl;
     } 
+    cout << "----------------------------------" << endl;
 
+    /* Prints map
     cout << "cities:" << endl;
     map <string, int>::iterator it1;
     for(it1 = cities.begin(); it1 != cities.end(); it1++) {
         cout << it1->first << "  " << it1->second << endl;
     }
+    */
 }
 
 /*If city (name) DNE (does not exist) in the "city_names" set,
@@ -43,8 +49,10 @@ bool Graph::CityDNE(string name) {
 //Adds a node to the graph
 void Graph::AddNode(string name) {
     if(current_id + 1 > this->V) {
+        cout << endl << "----------------------------------" << endl;
         cout << this->V << " is the maximum of cities you can have! ";
-        cout << "'" << name << "' not added!" << endl;
+        cout << "'" << name << "' not created!";
+        cout << endl << "----------------------------------" << endl;
         return;
     }
     if(CityDNE(name)) {
@@ -55,14 +63,19 @@ void Graph::AddNode(string name) {
         this->list[new_node->city.second].head = new_node;
 
         cities.insert(new_node->city);
-        cout << name <<" added!" << endl;
+        cout << endl << "----------------------------------" << endl;
+        cout << "'" << name << "' created!";
+        cout << endl << "----------------------------------" << endl;
+       
     } 
     else {
-        cout << "Not added!" << endl;
+        cout << endl << "----------------------------------" << endl;
+        cout << "City not created! No two cities can have the same name!";
+        cout << endl << "----------------------------------" << endl;
     }
 }
 
-//Creates undirected connections between "start" and "end"
+//Creates undirected connections between "start" and "end" with a distance of "dist"
 void Graph::AddEdge(string start, string end, int dist) {
 
     if(CityDNE(start) || CityDNE(end)) {
@@ -96,11 +109,15 @@ void Graph::AddEdge(string start, string end, int dist) {
             temp = temp->next;
         }
         temp->next = start_node;
+        cout << "'" << start << "' and " << "'" << end << "' have been connected via a highway that is " << dist << " miles long!" << endl;
     }
 }
 
 //Prints the graph as an adjacency list
 void Graph::PrintGraph() {
+    cout << endl << "++++++++++++++++++++++++++++++++++" << endl;
+    cout << "Cities Adjacency List: ";
+    cout << endl << "++++++++++++++++++++++++++++++++++" << endl;
    for(int i = 0; i < this->V ;i++) {
         Node *root = this->list[i].head;
         cout << "[" << i << "][" << root->city.first << "]: ";
@@ -115,5 +132,7 @@ void Graph::PrintGraph() {
             break;
         }
     }
+    cout << "----------------------------------" << endl;
+
 
 }
